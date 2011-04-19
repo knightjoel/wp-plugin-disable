@@ -1,5 +1,5 @@
 <?php
-/*	$jwk */
+/*	$jwk$ */
 
 /*
  * wp_disable_plugins.php
