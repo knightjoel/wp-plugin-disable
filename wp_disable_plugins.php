@@ -1,4 +1,6 @@
 <?php
+/*	$jwk */
+
 /*
  * wp_disable_plugins.php
  *
