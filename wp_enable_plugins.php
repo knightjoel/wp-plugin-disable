@@ -7,8 +7,9 @@
  * CLI helper script for WordPress that enables plugins. Run without 
  * any arguments to display list of plugins that exist in your 
  * wp-content/plugins/ directory. Specify plugins to enable as
- * arguments to the script. Run it from your WordPress directory so 
- * it can pick up your wp-config.php file.
+ * arguments to the script. Note by default it does not enable plugins
+ * network-wide (if you're running multi-site). Run it from your WordPress 
+ * directory so it can pick up your wp-config.php file.
  *
  *
  *
