@@ -60,11 +60,13 @@ if (sizeof($disable_plugins) == 0) {
 		}
 	}
 
-	$sql = "UPDATE options
+	$sql = "UPDATE " . $table_prefix . "options
 		SET option_value = '" . serialize($plugins) . "'
 		WHERE option_name = 'active_plugins'
 		";
 	$result = mysql_query($sql);
+	if ($result == false)
+		die("Query failed: " . mysql_error() . "\n");
 
 	printf("Disabled %d/%d plugins.\n", $cnt, sizeof($disable_plugins));
 }
