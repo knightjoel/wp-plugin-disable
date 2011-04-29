@@ -28,7 +28,7 @@ if (mysql_select_db(DB_NAME) == FALSE)
 	die("Could not select database '" . DB_NAME . "': " . mysql_error());
 
 $sql = "SELECT option_value
-	FROM options
+	FROM " . $table_prefix . "options
 	WHERE option_name = 'active_plugins'
 	";
 
@@ -36,6 +36,9 @@ $disable_plugins = $argv;
 array_shift($disable_plugins); /* pull the script filename off */
 
 $result = mysql_query($sql);
+if ($result == false)
+	die("Query failed: " . mysql_error() . "\n");
+
 $row = mysql_fetch_assoc($result);
 
 $plugins = unserialize($row["option_value"]);
